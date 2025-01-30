@@ -16,4 +16,4 @@
 
 ![image](https://github.com/user-attachments/assets/45829a18-910a-4660-a971-9a4bf94265bf)
 
-https://w7.pngwing.com/pngs/235/783/png-transparent-figshare-research-open-data-open-science-science-text-logo-brand.png
+![image](https://github.com/user-attachments/assets/fbe8a017-572d-48ad-bec0-562024e34031)
