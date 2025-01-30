@@ -39,6 +39,17 @@
             padding: 20px;
             margin-bottom: 30px;
         }
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: #f5f5f5;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
         .translation-tabs {
             display: flex;
             gap: 10px;
@@ -50,10 +61,14 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
         .tab.active {
             background: #333;
             color: white;
+        }
+        .tab:hover {
+            background: #e0e0e0;
         }
         .translation-content {
             border: 1px solid #ddd;
@@ -65,31 +80,6 @@
         }
         .content-section.active {
             display: block;
-        }
-        .tab {
-            transition: background-color 0.3s;
-        }
-        .tab:hover {
-            background-color: #e0e0e0;
-        }
-        .file-preview {
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 4px;
-            margin: 10px 0;
-        }
-        .document-link {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            background: #f5f5f5;
-            border-radius: 4px;
-            margin: 5px 0;
-            text-decoration: none;
-            color: #333;
-        }
-        .document-link:hover {
-            background: #e0e0e0;
         }
         .arabic {
             direction: rtl;
@@ -109,6 +99,19 @@
             border: 1px solid #ddd;
             padding: 10px;
         }
+        .drive-preview {
+            margin-top: 30px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        .drive-preview h4 {
+            margin-bottom: 15px;
+        }
+        .drive-iframe {
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
@@ -121,38 +124,53 @@
         <a href="#projects">Projects | المشاريع</a>
     </nav>
 
-    <!-- Project Example -->
-    <div class="project-card">
-        <h2>Technical Documentation Project | مشروع الوثائق التقنية</h2>
-        
-        <!-- Option 1: Embedded Preview -->
-        <div class="translation-tabs">
-            <button class="tab active" onclick="showContent('original')">Original | النص الأصلي</button>
-            <button class="tab" onclick="showContent('translation')">Translation | الترجمة</button>
-            <button class="tab" onclick="showContent('bilingual')">Bilingual | ثنائي اللغة</button>
-        </div>
-        
-        <div class="translation-content">
-            <!-- Original Content -->
-            <div id="original" class="content-section active">
-                <div class="file-preview english">
-                    <h4>Original Text | النص الأصلي</h4>
-                    <p>Configure the system settings through the administrative interface. Access requires proper authentication credentials. The system allows for multiple user roles and permissions to be set up according to organizational needs.</p>
-                </div>
+    <!-- Project Cards -->
+    <div class="projects-container">
+        <!-- Project 1 -->
+        <div class="project-card">
+            <div class="project-image">
+                <img src="/api/placeholder/400/200" alt="Project 1 Image">
             </div>
-
-            <!-- Translation Content -->
-            <div id="translation" class="content-section">
-                <div class="file-preview arabic">
-                    <h4>النص المترجم | Translated Text</h4>
-                    <p>قم بتكوين إعدادات النظام من خلال واجهة المسؤول. يتطلب الوصول بيانات اعتماد المصادقة المناسبة. يسمح النظام بإعداد أدوار وصلاحيات متعددة للمستخدمين وفقًا لاحتياجات المؤسسة.</p>
-                </div>
+            <h2>Technical Documentation | الوثائق التقنية</h2>
+            
+            <div class="translation-tabs">
+                <button class="tab active" onclick="showContent('original1')">Original | النص الأصلي</button>
+                <button class="tab" onclick="showContent('translation1')">Translation | الترجمة</button>
+                <button class="tab" onclick="showContent('bilingual1')">Bilingual | ثنائي اللغة</button>
             </div>
+            
+            <div class="translation-content">
+                <div id="original1" class="content-section active">
+                    <div class="english">
+                        <h4>Original Text Preview</h4>
+                        <p>Configure the system settings through the administrative interface. Access requires proper authentication credentials.</p>
+                        
+                        <div class="drive-preview">
+                            <h4>Full Document</h4>
+                            <iframe src="about:blank" width="100%" height="500" frameborder="0" 
+                                    class="drive-iframe"
+                                    data-src="https://drive.google.com/file/d/YOUR_ORIGINAL_FILE_ID/preview">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- Bilingual Content -->
-            <div id="bilingual" class="content-section">
-                <div class="file-preview">
-                    <h4>Bilingual View | عرض ثنائي اللغة</h4>
+                <div id="translation1" class="content-section">
+                    <div class="arabic">
+                        <h4>النص المترجم</h4>
+                        <p>قم بتكوين إعدادات النظام من خلال واجهة المسؤول. يتطلب الوصول بيانات اعتماد المصادقة المناسبة.</p>
+                        
+                        <div class="drive-preview">
+                            <h4>المستند الكامل</h4>
+                            <iframe src="about:blank" width="100%" height="500" frameborder="0"
+                                    class="drive-iframe"
+                                    data-src="https://drive.google.com/file/d/YOUR_TRANSLATION_FILE_ID/preview">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="bilingual1" class="content-section">
                     <table class="bilingual-table">
                         <tr>
                             <th>English</th>
@@ -166,58 +184,44 @@
                             <td>Access requires proper authentication credentials.</td>
                             <td class="arabic">يتطلب الوصول بيانات اعتماد المصادقة المناسبة.</td>
                         </tr>
-                        <tr>
-                            <td>The system allows for multiple user roles and permissions to be set up according to organizational needs.</td>
-                            <td class="arabic">يسمح النظام بإعداد أدوار وصلاحيات متعددة للمستخدمين وفقًا لاحتياجات المؤسسة.</td>
-                        </tr>
                     </table>
+                    
+                    <div class="drive-preview">
+                        <h4>Full Bilingual Document | المستند ثنائي اللغة الكامل</h4>
+                        <iframe src="about:blank" width="100%" height="500" frameborder="0"
+                                class="drive-iframe"
+                                data-src="https://drive.google.com/file/d/YOUR_BILINGUAL_FILE_ID/preview">
+                        </iframe>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Option 2: Document Links -->
-            <h4>Download Documents | تحميل المستندات</h4>
-            <a href="#" class="document-link">
-                📄 Original Document (EN)
-            </a>
-            <a href="#" class="document-link">
-                📄 Translated Document (AR)
-            </a>
-            <a href="#" class="document-link">
-                📄 Bilingual Version
-            </a>
-            
-            <!-- Option 3: Google Drive Embed -->
-            <h4>View Online | عرض عبر الإنترنت</h4>
-            <div class="file-preview">
-                <!-- Placeholder for Google Drive embed -->
-                <p>Google Drive document preview would appear here</p>
-            </div>
-            
-            <!-- Option 4: CAT Tool View -->
-            <h4>CAT Tool View | عرض أداة الترجمة</h4>
-            <table class="bilingual-table">
-                <tr>
-                    <th>Segment</th>
-                    <th>Source (EN)</th>
-                    <th>Target (AR)</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Original text here</td>
-                    <td class="arabic">النص المترجم هنا</td>
-                </tr>
-            </table>
         </div>
+
+        <!-- Projects 2-10 (Similar structure, different content and IDs) -->
+        <!-- Copy the project-card div structure 9 more times, changing IDs and content -->
+        
     </div>
+
     <script>
-        function showContent(contentType) {
-            // Remove active class from all tabs and content sections
-            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+        function showContent(contentId) {
+            // Get the project card containing this content
+            const projectCard = document.getElementById(contentId).closest('.project-card');
+            
+            // Remove active class from all tabs and content sections within this project card
+            projectCard.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            projectCard.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
             
             // Add active class to selected tab and content
-            document.querySelector(`.tab[onclick="showContent('${contentType}')"]`).classList.add('active');
-            document.getElementById(contentType).classList.add('active');
+            const tabIndex = contentId.replace(/[0-9]/g, '');
+            projectCard.querySelector(`.tab[onclick="showContent('${contentId}')"]`).classList.add('active');
+            document.getElementById(contentId).classList.add('active');
+            
+            // Load Google Drive iframe when tab is clicked
+            const activeSection = document.getElementById(contentId);
+            const iframe = activeSection.querySelector('.drive-iframe');
+            if (iframe && iframe.getAttribute('src') === 'about:blank') {
+                iframe.setAttribute('src', iframe.getAttribute('data-src'));
+            }
         }
     </script>
 </body>
