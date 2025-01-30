@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Translation Projects | المشاريع</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .nav {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .nav a {
+            color: #333;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 4px;
+            background: #fff;
+            display: inline-block;
+        }
+        .nav a:hover {
+            background: #e0e0e0;
+        }
+        .project-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .translation-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            background: #f5f5f5;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .tab.active {
+            background: #333;
+            color: white;
+        }
+        .translation-content {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 4px;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .tab {
+            transition: background-color 0.3s;
+        }
+        .tab:hover {
+            background-color: #e0e0e0;
+        }
+        .file-preview {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .document-link {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 4px;
+            margin: 5px 0;
+            text-decoration: none;
+            color: #333;
+        }
+        .document-link:hover {
+            background: #e0e0e0;
+        }
+        .arabic {
+            direction: rtl;
+            text-align: right;
+        }
+        .english {
+            direction: ltr;
+            text-align: left;
+        }
+        .bilingual-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .bilingual-table th,
+        .bilingual-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Translation Projects | المشاريع</h1>
+    </div>
+
+    <nav class="nav">
+        <a href="index.html">Home | الرئيسية</a>
+        <a href="#projects">Projects | المشاريع</a>
+    </nav>
+
+    <!-- Project Example -->
+    <div class="project-card">
+        <h2>Technical Documentation Project | مشروع الوثائق التقنية</h2>
+        
+        <!-- Option 1: Embedded Preview -->
+        <div class="translation-tabs">
+            <button class="tab active" onclick="showContent('original')">Original | النص الأصلي</button>
+            <button class="tab" onclick="showContent('translation')">Translation | الترجمة</button>
+            <button class="tab" onclick="showContent('bilingual')">Bilingual | ثنائي اللغة</button>
+        </div>
+        
+        <div class="translation-content">
+            <!-- Original Content -->
+            <div id="original" class="content-section active">
+                <div class="file-preview english">
+                    <h4>Original Text | النص الأصلي</h4>
+                    <p>Configure the system settings through the administrative interface. Access requires proper authentication credentials. The system allows for multiple user roles and permissions to be set up according to organizational needs.</p>
+                </div>
+            </div>
+
+            <!-- Translation Content -->
+            <div id="translation" class="content-section">
+                <div class="file-preview arabic">
+                    <h4>النص المترجم | Translated Text</h4>
+                    <p>قم بتكوين إعدادات النظام من خلال واجهة المسؤول. يتطلب الوصول بيانات اعتماد المصادقة المناسبة. يسمح النظام بإعداد أدوار وصلاحيات متعددة للمستخدمين وفقًا لاحتياجات المؤسسة.</p>
+                </div>
+            </div>
+
+            <!-- Bilingual Content -->
+            <div id="bilingual" class="content-section">
+                <div class="file-preview">
+                    <h4>Bilingual View | عرض ثنائي اللغة</h4>
+                    <table class="bilingual-table">
+                        <tr>
+                            <th>English</th>
+                            <th>العربية</th>
+                        </tr>
+                        <tr>
+                            <td>Configure the system settings through the administrative interface.</td>
+                            <td class="arabic">قم بتكوين إعدادات النظام من خلال واجهة المسؤول.</td>
+                        </tr>
+                        <tr>
+                            <td>Access requires proper authentication credentials.</td>
+                            <td class="arabic">يتطلب الوصول بيانات اعتماد المصادقة المناسبة.</td>
+                        </tr>
+                        <tr>
+                            <td>The system allows for multiple user roles and permissions to be set up according to organizational needs.</td>
+                            <td class="arabic">يسمح النظام بإعداد أدوار وصلاحيات متعددة للمستخدمين وفقًا لاحتياجات المؤسسة.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Option 2: Document Links -->
+            <h4>Download Documents | تحميل المستندات</h4>
+            <a href="#" class="document-link">
+                📄 Original Document (EN)
+            </a>
+            <a href="#" class="document-link">
+                📄 Translated Document (AR)
+            </a>
+            <a href="#" class="document-link">
+                📄 Bilingual Version
+            </a>
+            
+            <!-- Option 3: Google Drive Embed -->
+            <h4>View Online | عرض عبر الإنترنت</h4>
+            <div class="file-preview">
+                <!-- Placeholder for Google Drive embed -->
+                <p>Google Drive document preview would appear here</p>
+            </div>
+            
+            <!-- Option 4: CAT Tool View -->
+            <h4>CAT Tool View | عرض أداة الترجمة</h4>
+            <table class="bilingual-table">
+                <tr>
+                    <th>Segment</th>
+                    <th>Source (EN)</th>
+                    <th>Target (AR)</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Original text here</td>
+                    <td class="arabic">النص المترجم هنا</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        function showContent(contentType) {
+            // Remove active class from all tabs and content sections
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+            
+            // Add active class to selected tab and content
+            document.querySelector(`.tab[onclick="showContent('${contentType}')"]`).classList.add('active');
+            document.getElementById(contentType).classList.add('active');
+        }
+    </script>
+</body>
+</html>
