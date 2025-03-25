@@ -1,0 +1,285 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .nav {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .nav a {
+            color: #333;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 4px;
+            background: #fff;
+            display: inline-block;
+        }
+        .nav a:hover {
+            background: #e0e0e0;
+        }
+        .projects-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between; /* Evenly space the cards */
+        }
+
+        .project-card {
+          width: calc(33.333% - 20px);  /* Adjust for spacing and card count */
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          padding: 20px;
+          margin-bottom: 30px;
+          box-sizing: border-box; /* Ensure padding and border is included in width */
+        }
+
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: #f5f5f5;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .project-image img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block; /* to remove spacing below image*/
+             object-fit: contain; /* Adjust as needed: contain, cover, or none*/
+        }
+        .translation-tabs {
+            display: flex;
+             justify-content: center;  /* Center tabs */
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+       .tab {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            background: #fff; /* added background to tab */
+            color: #333; /* added color to tab */
+            text-decoration: none; /*added this so that button does not have text underlines*/
+        }
+        .tab.active {
+            background: #333;
+            color: white;
+        }
+         .tab:hover {
+            background: #e0e0e0;
+        }
+        .translation-content {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 4px;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .arabic {
+            direction: rtl;
+            text-align: right;
+        }
+        .english {
+            direction: ltr;
+            text-align: left;
+        }
+
+
+        .drive-preview {
+            margin-top: 30px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            position: relative; /* Needed for aspect ratio trick */
+        }
+        .drive-preview h4 {
+            margin-bottom: 15px;
+        }
+          
+        /* Hide the drive preview */
+        .drive-preview {
+          display: none;
+        }
+
+
+        @media (max-width: 992px) {
+          .project-card {
+            width: calc(50% - 20px); /* Two columns on medium-sized screens */
+          }
+        }
+      
+        @media (max-width: 768px) {
+          .project-card {
+             width: 100%; /* Single column on smaller screens */
+          }
+        }
+        
+        /* Pastel Color Palette */
+        .project-card:nth-child(1) { background-color: #f0f8ff; } /* AliceBlue */
+        .project-card:nth-child(2) { background-color: #faebd7; } /* AntiqueWhite */
+        .project-card:nth-child(3) { background-color: #f5f5dc; } /* Beige */
+        .project-card:nth-child(4) { background-color: #f0ffff; } /* Azure */
+        .project-card:nth-child(5) { background-color: #fff0f5; } /* LavenderBlush */
+        .project-card:nth-child(6) { background-color: #f8f8ff; } /* GhostWhite */
+        .project-card:nth-child(7) { background-color: #f0e6ef; } /* Lavender */
+        .project-card:nth-child(8) { background-color: #e0ffff; } /* LightCyan */
+        .project-card:nth-child(9) { background-color: #f5fffa; } /* MintCream */
+        .project-card:nth-child(10) { background-color: #ffe4e1; } /* MistyRose */
+
+    /* Existing CSS code */
+
+
+/* Tool Cards */
+.tool-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.tool-card img {
+    width: 120px;  /* Increased from 60px */
+    height: 120px; /* Increased from 60px */
+    margin: 0 auto 25px; /* Centered with more bottom margin */
+    display: block;
+    object-fit: contain; /* Ensures image maintains aspect ratio */
+}
+
+.tool-card h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+
+
+    /* Skills & Tools Section */
+.skills-section {
+    padding: 40px 20px;
+    background: #f5f5f5;
+}
+
+.skills-section h2, .partners-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.tools-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tool-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+}
+
+.tool-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.tool-card h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.tool-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tool-card ul li {
+    padding: 5px 0;
+    color: #666;
+}
+
+/* Partners Section */
+.partners-section {
+    padding: 40px 20px;
+    background: white;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.partner-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.partner-logo:hover {
+    transform: scale(1.05);
+}
+
+.partner-logo img {
+    max-width: 150px;
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.partner-logo:hover img {
+    filter: grayscale(0%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tools-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .partners-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
