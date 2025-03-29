@@ -9,3 +9,6 @@ https://astral-fate.github.io/Translation-Portfolio/
 
 
 https://zlibrary-redirect.se/book/21008117/048fe8/?
+
+
+https://www.mediawiki.org/wiki/Content_translation
